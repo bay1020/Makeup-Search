@@ -46,6 +46,7 @@ class MakeupAdapter(private val data: List<Post>): RecyclerView.Adapter<MakeupAd
 
             var colors = r.product_colors.toString()
             Log.d("aaa", colors)
+            Log.d("aaa", colors)
             val colors2 = Gson().toJson(r.product_colors)
             Log.d("aaa2", colors2)
 
