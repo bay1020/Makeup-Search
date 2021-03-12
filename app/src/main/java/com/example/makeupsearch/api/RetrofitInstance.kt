@@ -17,7 +17,4 @@ object RetrofitInstance {
         retrofit.create(SimpleApi::class.java)
     }
 
-
-
-
 }

@@ -1,8 +1,8 @@
-package com.example.makeupsearch.util
+    package com.example.makeupsearch.util
 
-class Constants {
+    class Constants {
 
-    companion object {
-        const val BASE_URL = "https://makeup-api.herokuapp.com/"
+        companion object {
+            const val BASE_URL = "https://makeup-api.herokuapp.com/"
+        }
     }
-}

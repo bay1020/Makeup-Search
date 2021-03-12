@@ -2,22 +2,18 @@ package com.example.makeupsearch
 
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
-import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.makeupsearch.databinding.MakeupInfoLayoutBinding
-import com.example.makeupsearch.model.Post
+import com.example.makeupsearch.model.MakeupInformation
 import com.google.gson.Gson
-import org.json.JSONArray
-import org.json.JSONObject
 
 private const val TAG = "MakeupAdapter"
-class MakeupAdapter(private val data: List<Post>): RecyclerView.Adapter<MakeupAdapter.MakeupViewHolder>(){
+class MakeupAdapter(private val data: List<MakeupInformation>): RecyclerView.Adapter<MakeupAdapter.MakeupViewHolder>(){
     private lateinit var mContext: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MakeupAdapter.MakeupViewHolder {
@@ -38,7 +34,7 @@ class MakeupAdapter(private val data: List<Post>): RecyclerView.Adapter<MakeupAd
     }
 
     inner class MakeupViewHolder(val binding: MakeupInfoLayoutBinding): RecyclerView.ViewHolder(binding.root){
-        fun onBind(r: Post){
+        fun onBind(r: MakeupInformation){
             Glide.with(mContext).load(r.image_link).into(binding.imageView)
 
 

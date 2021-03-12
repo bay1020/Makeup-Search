@@ -1,13 +1,13 @@
 package com.example.makeupsearch.repository
 
 import com.example.makeupsearch.api.RetrofitInstance
-import com.example.makeupsearch.model.Post
+import com.example.makeupsearch.model.MakeupInformation
 import retrofit2.Response
 
 class Repository {
 
-    suspend fun getPost(brand: String): Response<List<Post>> {
-        return RetrofitInstance.api.getPost(brand)
+    suspend fun getMakeupInformation(brand: String): Response<List<MakeupInformation>> {
+        return RetrofitInstance.api.searchBrand(brand)
     }
 
 }

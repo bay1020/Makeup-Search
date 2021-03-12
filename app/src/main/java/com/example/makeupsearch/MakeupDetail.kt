@@ -4,16 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.makeupsearch.databinding.ActivityMakeupDetailBinding
-import com.example.makeupsearch.model.Post2
+import com.example.makeupsearch.model.ProductColorInformation
 import org.json.JSONArray
 import org.json.JSONObject
 
 class MakeupDetail : AppCompatActivity() {
     private lateinit var binding: ActivityMakeupDetailBinding
-    private val colorlist: MutableList<Post2> = mutableListOf()
+    private val colorlist: MutableList<ProductColorInformation> = mutableListOf()
     private lateinit var adapter: DetailAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +39,7 @@ class MakeupDetail : AppCompatActivity() {
             val colorname: String = (colorsasjson[r] as JSONObject).get("colour_name").toString()
             val hexvalue: String = (colorsasjson[r] as JSONObject).get("hex_value").toString()
 
-            colorlist.add(Post2(hexvalue, colorname))
+            colorlist.add(ProductColorInformation(hexvalue, colorname))
 
         }
 

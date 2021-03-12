@@ -1,24 +1,16 @@
 package com.example.makeupsearch
 
 import android.content.Context
-import android.content.Intent
 import android.graphics.Color
-import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.makeupsearch.databinding.ColorsDisplayBinding
-import com.example.makeupsearch.model.Post2
-import com.google.gson.Gson
-import org.json.JSONArray
-import org.json.JSONObject
+import com.example.makeupsearch.model.ProductColorInformation
 
 private const val TAG = "DetailAdapter"
-class DetailAdapter(private val data: List<Post2>): RecyclerView.Adapter<DetailAdapter.DetailViewHolder>(){
+class DetailAdapter(private val data: List<ProductColorInformation>): RecyclerView.Adapter<DetailAdapter.DetailViewHolder>(){
     private lateinit var mContext: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailAdapter.DetailViewHolder {
@@ -39,7 +31,7 @@ class DetailAdapter(private val data: List<Post2>): RecyclerView.Adapter<DetailA
     }
 
     inner class DetailViewHolder(val binding: ColorsDisplayBinding): RecyclerView.ViewHolder(binding.root){
-        fun onBind(r: Post2){
+        fun onBind(r: ProductColorInformation){
             Log.d("color", r.hex_value)
             Log.d("color2", r.colour_name)
 
